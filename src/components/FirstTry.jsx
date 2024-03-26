@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Header } from "./header/Header";
-import { Footer } from "./footer/Footer";
 
 export function FirstTry() {
     const [count, setCount] = useState(0);
@@ -15,16 +13,12 @@ export function FirstTry() {
 
     return (
         <>
-            <Header />
-            <main>
-                <h1>Hooks FTW</h1>
-                <div className="counter">
-                    <button onClick={decrement}>-</button>
-                    <span>{count}</span>
-                    <button onClick={increment}>+</button>
-                </div>
-            </main>
-            <Footer />
+            <h1>Hooks FTW</h1>
+            <div className="counter">
+                <button onClick={decrement}>-</button>
+                <span>{count}</span>
+                <button onClick={increment}>+</button>
+            </div>
         </>
     );
 }
