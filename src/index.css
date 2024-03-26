@@ -17,8 +17,33 @@ body > div {
     gap: 2rem;
 }
 
+.basic-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+}
+
+.ads-layout {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+        'header header'
+        'main ads'
+        'footer footer';
+}
+
 main {
+    grid-area: main;
     padding: 2rem;
+}
+
+aside {
+    grid-area: ads;
+    padding: 2rem;
+    background-color: pink;
 }
 
 .counter {
