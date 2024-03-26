@@ -1,30 +1,20 @@
-import { useState } from "react";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { FirstTry } from "./components/FirstTry";
 import { Basketball } from "./components/basketball/Basketball";
 import { List } from "./components/list/List";
+import { NotFound } from './components/NotFound';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  function increment() {
-    setCount(count + 1);
-  }
-
-  function decrement() {
-    setCount(count - 1);
-  }
-
   return (
-    <>
-      <List />
-      <Basketball />
-      <h1>Hooks FTW</h1>
-      <div className="counter">
-        <button onClick={decrement}>-</button>
-        <span>{count}</span>
-        <button onClick={increment}>+</button>
-      </div>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route index path='/' element={<FirstTry />} />
+        <Route path='/basketball' element={<Basketball />} />
+        <Route path='/list' element={<List />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
